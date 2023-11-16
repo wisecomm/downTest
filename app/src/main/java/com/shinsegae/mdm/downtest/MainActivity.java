@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public void installApk(File file, int status) {
         if(status != DownloadManager.STATUS_SUCCESSFUL) {
             Toast.makeText(context, "다운로드 실패 했습니다.", Toast.LENGTH_SHORT).show();
-            finish();
             return;
         }
 
@@ -129,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(intent);
-        finish();
     }
 
 }
